@@ -1,14 +1,10 @@
 <template>
     <section class="profile">
-        <header class="header">
-            <div class="header_title">
-                <span class= "header_title_text">我的</span>
-            </div>
-        </header>
+        <HeaderTop title="我的"></HeaderTop>
         <section class="profile-number">
             <router-link to="/login" class="profile-link">
                 <div class="profile_image">
-                    <i class="iconfont icon-person"></i>
+                    <i class="iconfont icon-wode"></i>
                 </div>
                 <div class="user-info">
                     <p class="user-info-top">登录/注册</p>
@@ -20,7 +16,7 @@
                     </p>
                 </div>
                 <span class="arrow">
-                    <i class="iconfont icon-jiantou1"></i>
+                    <i class="iconfont icon-jinrujiantou"></i>
                 </span>
             </router-link>
         </section>
@@ -95,7 +91,12 @@
     </section>
 </template>
 <script>
-export default {}
+import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
+export default {
+  components: {
+    HeaderTop
+  }
+}
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../../common/stylus/mixins.styl"
@@ -143,7 +144,7 @@ export default {}
             border-radius 50%
             overflow hidden
             vertical-align top
-            .icon-person
+            .icon-wode
               background #e4e4e4
               font-size 62px
           .user-info
@@ -162,8 +163,8 @@ export default {}
                 margin-right 5px
                 width 20px
                 height 20px
-                .icon-mobile
-                  font-size 30px
+                .icon-shouji
+                  font-size 25px
                   vertical-align text-top
               .icon-mobile-number
                 font-size 14px

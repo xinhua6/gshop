@@ -1,17 +1,14 @@
 <template>
     <div class="msite">
         <!-- 首页头部 -->
-        <header class="header">
-            <a class="header_search">
+        <HeaderTop title="南昌市华东交通大学南区">
+            <router-link slot="search" to="/search" class="header_search">
                 <i class="iconfont icon-sousuo"></i>
-            </a>
-            <a class="header_title">
-                <span class="header_title_text ellipsis">南昌市华东交通大学南区</span>
-            </a>
-            <a class="header_login">
+            </router-link>
+            <router-link slot="login" to="/login" class="header_login">
                 <span class="header_login_text">登录|注册</span>
-            </a>
-        </header>
+            </router-link>
+        </HeaderTop>
         <!-- 首页导航 -->
         <nav class="msite_nav border-1px">
             <div class="swiper-container">
@@ -127,67 +124,29 @@
                 <i class=""></i>
                 <span class="shop_header_title">附近商家</span>
             </div>
-            <div class="shop_container">
-                <ul class="shop_list">
-                    <li class="shop_li border-1px">
-                        <a>
-                            <div class="shop_left">
-                                <img class="shop_img" src="#">
-                            </div>
-                            <div class="shop_right">
-                                <section class="shop_detail_header">
-                                    <h4 class="shop_title"></h4>
-                                    <ul class="shop_detail_ul">
-                                        <li class="supports">保</li>
-                                        <li class="supports">准</li>
-                                        <li class="supports">票</li>
-                                    </ul>
-                                </section>
-                                <section class="shop_rating_order">
-                                    <section class="shop_rating_order_left">
-                                        <div class="star star-24">
-                                            <span class="star-item on"></span>
-                                            <span class="star-item on"></span>
-                                            <span class="star-item on"></span>
-                                            <span class="star-item half"></span>
-                                            <span class="star-item off"></span>
-                                        </div>
-                                        <div class="rating_section"></div>
-                                        <div class="order_section">月售单</div>
-                                    </section>
-                                    <section class="shop_rating_order_right">
-                                        <span class="delivery_style delivery_left">菜鸟专送</span>
-                                        <span class="delivery_style delivery_right">准时达到</span>
-                                    </section>
-                                </section>
-                                <section class="shop_distance">
-                                    <p class="shop_delivery_msg">
-                                        <span>起</span>
-                                        <span class="segmentation"></span>
-                                        <span>配送费¥</span>
-                                    </p>
-                                </section>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <ShopList/>
         </div>
     </div>
 </template>
 <script>
-import Swiper from 'swiper'
-import 'swiper/dist/css/swiper.min.css'
+// import Swiper from 'swiper'
+// import 'swiper/dist/css/swiper.min.css'
+import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
+import ShopList from '../../components/ShopList/ShopList.vue'
 export default {
-  mounted () {
-    /* eslint-disable no-new */
-    new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination'
-      },
-      loop: true
-    })
+  components: {
+    HeaderTop,
+    ShopList
   }
+//   mounted () {
+//     /* eslint-disable no-new */
+//     new Swiper('.swiper-container', {
+//       pagination: {
+//         el: '.swiper-pagination'
+//       },
+//       loop: true
+//     })
+//   }
 }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
